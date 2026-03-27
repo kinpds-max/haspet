@@ -23,6 +23,7 @@ body {
     background-color: var(--bg);
     line-height: 1.6;
     overflow-x: hidden;
+    word-break: keep-all; /* Keeps Korean words together for better readability */
 }
 
 ul { list-style: none; }
@@ -603,11 +604,24 @@ footer {
 }
 
 @media (max-width: 992px) {
-    #navbar { padding: 15px 0; background: var(--glass); backdrop-filter: blur(15px); }
-    .nav-container { padding: 0 30px; }
+    #navbar { padding: 12px 0; background: var(--glass); backdrop-filter: blur(20px); }
+    .nav-container { padding: 0 20px; }
     
-    .mobile-toggle { display: block; }
+    .logo i { font-size: 1.5rem; }
+    .logo-text { font-size: 1.1rem; }
     
+    .mobile-toggle { 
+        display: block; 
+        margin-left: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .nav-extra {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
     .nav-links {
         position: fixed;
         top: 80px;
@@ -675,7 +689,13 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .nav-container { padding: 0 15px; }
     .hero-title { font-size: 2.2rem; }
-    .logo-text { font-size: 1.2rem; }
-    .logo i { font-size: 1.5rem; }
+    .logo-text { font-size: 1rem; letter-spacing: 1px; }
+    .logo i { font-size: 1.3rem; gap: 8px; }
+    .nav-extra .cta-store {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    .mobile-toggle { margin-left: 8px; font-size: 1.2rem; }
 }
